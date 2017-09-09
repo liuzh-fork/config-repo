@@ -1,9 +1,10 @@
 # spring-cloud-upms-server 配置文件
 info:
-    name: 用户权限系统123
-    description: Spring Cloud 用户权限系统 - 服务提供者
+    name: 内容管理系统
+    description: 服务 - CMS 内容管理系统 - 服务提供者
 server:
-  port: 9000
+  port: 9100
+
 ---
 spring:
   profiles: dev
