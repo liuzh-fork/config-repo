@@ -1,0 +1,39 @@
+server:
+  port: 8761
+
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  profiles: dev
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+  server:
+    # Eureka 自我保护模式，本地测试时开启，用于将不可用服务剔除
+    # 参考：http://bbs.springcloud.com.cn/d/48-up/11
+    enable-self-preservation: false
+
+---
+spring:
+  profiles: production
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:${server.port}/eureka/
+  server:
+    enable-self-preservation: true
+
+#spring.cloud.config.localhost.enabled: true
