@@ -1,23 +1,20 @@
 # spring-cloud-upms-server 配置文件
 info:
-    name: 用户权限系统
+    name: 用户权限系统123
     description: Spring Cloud 用户权限系统 - 服务提供者
 spring:
   profiles:
     active: dev
 server:
   port: 9000
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://localhost:8761/eureka/
-#  instance:
-#    preferIpAddress: true
+
 ---
+
 spring:
   profiles: dev
 # actuator 端点取消安全限制，通过 /application/endpoint 直接访问
 # 参考地址：https://docs.spring.io/spring-boot/docs/2.0.0.M3/reference/htmlsingle/#production-ready-sensitive-endpoints
 management:
   security:
+    roles: SUPERUSER
     enabled: false
