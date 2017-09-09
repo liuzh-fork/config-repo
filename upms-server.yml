@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: dev
+server:
+  port: 9000
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+---
+spring:
+  profiles: dev
+# actuator 端点取消安全限制，通过 /application/endpoint 直接访问
+# 参考地址：https://docs.spring.io/spring-boot/docs/2.0.0.M3/reference/htmlsingle/#production-ready-sensitive-endpoints
+management:
+  security:
+    enabled: false
