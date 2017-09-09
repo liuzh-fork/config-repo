@@ -1,6 +1,6 @@
 # spring-cloud-upms-server 配置文件
 info:
-    name: UPMS
+    name: 用户权限系统
     description: Spring Cloud 用户权限系统 - 服务提供者
 spring:
   profiles:
